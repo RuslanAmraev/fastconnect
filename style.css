@@ -1,0 +1,60 @@
+.block{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+a{
+	height: 120px;
+	cursor: pointer;
+	text-decoration: none;
+	color: #000;
+	display: flex;
+	justify-content: center;
+	padding: 65px 25px 0 25px;
+	font-size: 1.5vw;
+	font-weight: 600;
+	color: #fff;
+	background-color: #000;
+	user-select: none;
+}
+
+.col-wrap{
+	width: 40%;
+}
+
+.bg{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.dark{
+	background-color: #000;
+	margin: 10px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+#a{
+	background-image: url(https://hron.com.ua/wp-content/uploads/2013/07/33439409-650x300.jpg);
+}
+#b{
+	background-image: url(https://cetera.ru/uploads/20180904/server.jpg);
+}
+#c{
+	background-image: url(https://intalent.pro/sites/default/files/styles/new_photo_in_article/public/foto/article/kode.jpg?itok=cRTp9WBT);
+}
+#d{
+	background-image: url(http://www.gagauz.md/wp-content/uploads/2017/11/basketbol3.jpg);
+}
+#e{
+	background-image: url(https://funart.pro/uploads/posts/2020-03/1584638571_8-p-foni-na-temu-psikhologii-29.jpg);
+}
+#f{
+	background-image: url(https://strategy2050.kz/upload/iblock/419/2931750aef4c5a6ede0e7d0640b89bfc.jpg);
+}
+
+#now{
+	text-align: center;
+}
