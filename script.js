@@ -48,6 +48,14 @@ function setLesson(data, day){
 			if (timeEdit(el.timeFrom) <= date.getHours()*60+date.getMinutes() && timeEdit(el.timeTo) > date.getHours()*60+date.getMinutes()){
 				document.getElementById('now').append(el.lesson)
 				document.getElementById('time').append('До конца пары: ' + (timeEdit(el.timeTo) - (date.getHours()*60+date.getMinutes())) + ' минут')
+			}else{
+				let min = 0
+				if(min < timeEdit(el.timeFrom) - (date.getHours()*60+date.getMinutes())){
+					min = timeEdit(el.timeFrom) - (date.getHours()*60+date.getMinutes())
+				}
+				if(min>0){
+					document.getElementById('time').append('Перемена: ' + min + ' минут')
+				}
 			}
 		})
 	}
