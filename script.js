@@ -46,7 +46,8 @@ function setLesson(data, day){
 	}else{
 		data.map(el =>{
 			if (timeEdit(el.timeFrom) <= date.getHours()*60+date.getMinutes() && timeEdit(el.timeTo) > date.getHours()*60+date.getMinutes()){
-			document.getElementById('now').append(el.lesson)
+				document.getElementById('now').append(el.lesson)
+				document.getElementById('time').append('До конца пары: ' + (timeEdit(el.timeTo) - (date.getHours()*60+date.getMinutes())) + 'минут')
 			}
 		})
 	}
