@@ -27,7 +27,12 @@ var data = [monday, tuesday, wendesday, thursday, friday]
 var date = new Date()
 
 
-setLesson(dayChoose(data), date.getDay())
+
+
+setInterval(()=>{
+	setLesson(dayChoose(data), date.getDay())
+	date = new Date()
+}, 10);
 
 
 function timeEdit(time){
@@ -42,19 +47,19 @@ function dayChoose(data){
 
 function setLesson(data, day){
 	if(day > 5 || day < 1){
-		document.getElementById('now').append('Сегодня выходной')
+		document.getElementById('now').innerHTML = 'Сегодня выходной'
 	}else{
 		data.map(el =>{
 			if (timeEdit(el.timeFrom) <= date.getHours()*60+date.getMinutes() && timeEdit(el.timeTo) > date.getHours()*60+date.getMinutes()){
-				document.getElementById('now').append(el.lesson)
-				document.getElementById('time').append('До конца пары: ' + (timeEdit(el.timeTo) - (date.getHours()*60+date.getMinutes())) + ' минут')
+				document.getElementById('now').innerHTML = el.lesson
+				document.getElementById('time').innerHTML = 'До конца пары: ' + (timeEdit(el.timeTo) - (date.getHours()*60+date.getMinutes())) + ' минут'
 			}else{
 				let min = 0
 				if(min < timeEdit(el.timeFrom) - (date.getHours()*60+date.getMinutes())){
 					min = timeEdit(el.timeFrom) - (date.getHours()*60+date.getMinutes())
 				}
 				if(min>0){
-					document.getElementById('time').append('Перемена: ' + min + ' минут')
+					document.getElementById('time').innerHTML = 'Перемена: ' + min + ' минут'
 				}
 			}
 		})
